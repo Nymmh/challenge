@@ -18,13 +18,13 @@ searchPostCode.onsubmit = (e)=>{
         console.log(response)
         if(response.found){
             let available = []; 
-            if(response.sunday)available.push("Sunday");
-            if(response.monday)available.push("Monday");
-            if(response.tuesday)available.push("Tuesday");
-            if(response.wednesday)available.push("Wednesday");
-            if(response.thursday)available.push("Thursday");
-            if(response.friday)available.push("Friday");
-            if(response.saturday)available.push("Saturday");
+            if(response.sunday)available.push("<span class='open'>Sunday</span>");else available.push("<span class='closed'>Sunday</span>")
+            if(response.monday)available.push("<span class='open'>Monday</span>");else available.push("<span class='closed'>Monday</span>")
+            if(response.tuesday)available.push("<span class='open'>Tuesday</span>");else available.push("<span class='closed'>Tuesday</span>")
+            if(response.wednesday)available.push("<span class='open'>Wednesday</span>");else available.push("<span class='closed'>Wednesday</span>")
+            if(response.thursday)available.push("<span class='open'>Thursday</span>");else available.push("<span class='closed'>Thursday</span>")
+            if(response.friday)available.push("<span class='open'>Friday</span>");else available.push("<span class='closed'>Friday</span>")
+            if(response.saturday)available.push("<span class='open'>Saturday</span>");else available.push("<span class='closed'>Saturday</span>")
             calendar.innerHTML = `<div><h1>Available days</h1>${available}</div>`;
         }else{
             calendar.innerHTML = "<p>Could not find that postal code</p>";

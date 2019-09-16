@@ -6,3 +6,9 @@ body{
     background: #434343;
     color: aliceblue;
 }
+.closed{
+    color: #fc2c03;
+}
+.open{
+    color: #5fed93;
+}
